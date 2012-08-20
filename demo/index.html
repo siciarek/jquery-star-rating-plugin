@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>JaySic jQuery Plugins</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link type="text/css" media="all" rel="stylesheet" href="main.css"/>
+    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript" src="../jquery.star-rating.js"></script>
+</head>
+<body style="background:silver;">
+
+<p>1. Some text for first rate</p>
+<div class="starrate" id="first"></div>
+<p>2. Some text for second rate</p>
+<div class="starrate" id="second"></div>
+<p>3. Some text for third rate</p>
+<div class="starrate" id="third"></div>
+<p>4. Some text for fourth rate</p>
+<div class="starrate" id="fourth"></div>
+<p>5. Some text for fifth rate</p>
+<div class="starrate" id="fifth"></div>
+<p>6. Some text for sixth rate</p>
+<div class="starrate" id="sixth"></div>
+
+<p><a href="javascript:void(null)" onclick="alert($.fn.starRating.rates.toSource())">Show rating</a></p>
+
+<script type="text/javascript">
+
+    var callback = function(container) {
+
+        var rates = $.fn.starRating.getRates();
+
+        var ajaxConfig = {
+            container: container,
+
+            url: 'frontcontroller.html',
+
+            data: {
+                rates: rates
+            },
+
+            success: function(data) {
+                var key = '#' + this.container + ' .spinner';
+                $(key).hide();
+
+                if(data.success == false) {
+                    $.fn.starRating.rollback();
+                    alert(data.msg);
+                }
+            },
+
+            error: function(data) {
+                alert(data.toSource());
+                $.fn.starRating.rollback();
+            },
+
+            beforeSend: function() {
+                var key = '#' + this.container + ' .spinner';
+                $(key).show();
+            },
+
+            complete: function() {
+                var key = '#' + this.container + ' .spinner';
+                $(key).hide();
+            }
+        };
+
+        $.ajax(ajaxConfig);
+    };
+
+    $(document).ready(function () {
+        $('.starrate').starRating({stars: 10, callback: callback });
+    });
+
+</script>
+
+</body>
+</html>
