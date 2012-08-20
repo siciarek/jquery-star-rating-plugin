@@ -22,7 +22,7 @@ Include script *after* the jQuery library (unless you are packaging scripts some
 
 ###Basic usage (javascript):
 
-$('.starrate').starRating({stars: 10});
+    $('.starrate').starRating({stars: 10});
 
 
 ## Options
