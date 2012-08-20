@@ -11,7 +11,7 @@ Include script *after* the jQuery library (unless you are packaging scripts some
 
 ## Demo page
 
-    [Click Me](http://siciarek.linuxpl.info/jquery-star-rating-plugin/demo/index.html)
+[http://siciarek.linuxpl.info/jquery-star-rating-plugin/demo/index.html](http://siciarek.linuxpl.info/jquery-star-rating-plugin/demo/index.html)
 
 ## Usage
 
