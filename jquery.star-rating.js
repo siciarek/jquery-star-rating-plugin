@@ -1,11 +1,12 @@
 /**
- * Star rating control whith no external graphics, styles nor divs.
+ * jQuery Star Rating Plugin v1.0
+ * https://github.com/siciarek/jquery-star-rating-plugin
  *
- * Author: Jacek Siciarek
- * Date: 30.07.12
- * Time: 13:52
+ * Copyright 2012, Jacek Siciarek
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.opensource.org/licenses/GPL-2.0
  */
-
 (function ($) {
 
     $.fn.starRating = function (options) {
