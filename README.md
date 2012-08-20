@@ -17,7 +17,7 @@ Include script *after* the jQuery library (unless you are packaging scripts some
 
 ###Basic usage (html):
 
-<p>1. Some text for the first rate</p>
+&lt;p&gt;1. Some text for the first rate</p>
 <div class="starrate" id="first"></div>
 
 ###Basic usage (javascript):
