@@ -1,5 +1,5 @@
 /**
- * jQuery Star Rating Plugin v1.0
+ * jQuery Star Rating Plugin v1.0b
  * https://github.com/siciarek/jquery-star-rating-plugin
  *
  * Copyright 2012, Jacek Siciarek
@@ -80,6 +80,7 @@
 
         return this.each(function () {
             cls = $(this).attr('class');
+
             $.fn.starRating.rates[$(this).attr('id')] = 0;
             $.fn.starRating.previous[$(this).attr('id')] = 0;
             tempRates[$(this).attr('id')] = 0;
